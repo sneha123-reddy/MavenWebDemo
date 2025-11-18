@@ -32,6 +32,12 @@
     <version>1.10.3</version> <!-- Replace with latest version -->
 </dependency>
   </dependencies>
+    <distributionManagement>
+    <repository>
+      <id>local-repo</id>
+      <url>file:///C:/maven-repo/</url>
+    </repository>
+  </distributionManagement>
 
   <build>
     <finalName>webdemo</finalName>

@@ -1,0 +1,11 @@
+import boto3
+
+table = boto3.resource('dynamodb').Table('newtable2')
+
+def lambda_handler(event, context):
+    print("TRIGGERED")
+    
+    for r in event['Records']:
+        table.put_item(Item={
+            'Object': r['s3']['object']['key']
+        })

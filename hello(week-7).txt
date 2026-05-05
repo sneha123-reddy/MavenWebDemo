@@ -1,3 +1,4 @@
+week 7
 import boto3
 
 table = boto3.resource('dynamodb').Table('newtable2')
@@ -9,3 +10,10 @@ def lambda_handler(event, context):
         table.put_item(Item={
             'Object': r['s3']['object']['key']
         })
+
+
+week 8
+def lambda_handler(event, context):
+    for record in event['Records']:
+        print("Message from SQS:")
+        print(record['body'])
